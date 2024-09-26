@@ -1,9 +1,16 @@
-﻿namespace Mango.Services.CouponAPI.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Mango.Services.CouponAPI.Models;
 
 public class Coupon
 {
-    public int CouponID { get; set; }
-    public string? CouponCode { get; set; }
+    [Key]
+    public required int CouponID { get; set; }
+
+    [Required]
+    public  string? CouponCode { get; set; }
+
     public double DiscountAmount { get; set; }
+
     public int MinAmount { get; set; }
 }
